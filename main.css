@@ -1,0 +1,313 @@
+#main {
+    font-family: sans-serif;
+    width: 30em;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+
+    box-shadow: 0 0 1px #eeeeee, 0 0 4px #aaa;
+    padding: 1em;
+
+}
+
+
+
+#title {
+    display: block;
+    font-size: 2em;
+}
+
+#beam {
+    display: inline-block;
+    /* vertical-align: middle; */
+    margin-top: 0.5em;
+    font-size: 1em;
+    vertical-align: top;
+    margin-right: 0.5em;
+    font-style: italic;
+    color: #002f70;
+    /* text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #0060e6, 0 0 4px #0060e6, 0 0 5px #0060e6, 0 0 6px #0060e6, 0 0 7px #0060e6; */
+    /* text-shadow: 0 0 0.5px #fff, 0 0 1px #fff, 0 0 1px #0060e6, 0 0 1px #0060e6, 0 0 1px #0060e6, 0 0 1px #0060e6, 0 0 1px #0060e6; */
+    text-shadow: 0 0 5px #0060e6, 0 0 30px #0060e6;
+    text-decoration: line-through;
+}
+
+.row0 {
+    background-color: #eeeeee;
+}
+
+.row1 {
+    background-color: #ffffff;
+}
+
+#zapper {
+    height: 2em;
+    margin-top: 0.1em;
+}
+
+#zappercontainer {
+    display: inline-block;
+    margin-top: 0.48em;
+
+    margin-left: -0.66em;
+}
+
+#isxcontainer {
+    display: inline-block;
+    height: 3em;
+    width: 38em;
+    vertical-align: middle;
+    margin-left: 0.5em;
+}
+
+#isx {
+    height: 1.4em;
+
+    vertical-align: top;
+    margin-top: 0.4em;
+    margin-right: -0.2em;
+    box-shadow: 0 0 20px 0px #0060e6, 0 0 0px #0060e6;
+    border-radius: 1em;
+    -webkit-filter: drop-shadow(1px 1px 5px #0060e6);
+    filter: drop-shadow(1px 1px 5px #0060e6);
+}
+
+
+
+#slidercontainer {
+    text-align: right;
+    padding: 0.5em;
+    display: block;
+}
+
+#slider {
+    width: 100%;
+}
+
+#account {
+    padding: 1em;
+    font-size: 2em;
+    text-align: left;
+
+}
+
+#balance {
+    padding: 1em;
+    font-size: 2em;
+    text-align: right;
+    /* margin-top: 1em; */
+}
+
+#slidervalue {
+    display: block;
+}
+
+#zapper2 {
+    height: 1em;
+}
+
+#zapbutton {
+    font-size: 2em;
+}
+
+#zapvalue {
+    width: 84%;
+    font-size: 2em;
+    vertical-align: top;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    border: 1px solid lightgrey;
+    background-image: url(https://isx.interstellar-nft.com/img/isx.png);
+    background-position-x: 0px;
+    background-position-y: 0px;
+    background-size: 2em;
+    background-repeat: no-repeat;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
+    padding-left: 2em;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#zapcontainer {
+    padding: 2em;
+    text-align: right;
+    margin-left: 0;
+}
+
+#zapbutton {
+    width: 100%;
+
+    height: 2em;
+    margin-left: auto;
+    margin-right: 0.5em;
+}
+
+button:enabled:active {
+    box-shadow: 0 0 20px 0px #0060e6, 0 0 20px #0060e6;
+    border: 1px solid #0060e6;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #0060e6aa;
+    cursor: auto;
+}
+
+button {
+    border: 1px solid #0060e6;
+    background-color: #0060e6;
+    font-size: 1em;
+}
+
+.zap {
+
+    color: white;
+    width: 100%;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+#connect {
+    height: 2.4em;
+}
+
+#warning {
+    position: absolute;
+    top: 0px;
+    background-color: #f5ec6a;
+    text-align: center;
+    width: 100%;
+    height: 1em;
+}
+
+
+
+table {
+    width: 100%;
+    font-size: 2em;
+    border-collapse: collapse;
+}
+
+tr {
+    height: 2em;
+}
+
+td input {
+    height: 2em;
+}
+
+#cbView {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2em;
+}
+
+#cbAmountContainer {
+    display: block;
+    font-size: 2em;
+    text-align: center;
+    margin-top: 0.5em;
+}
+
+#zapbuttoncb {
+    width: 100%;
+    font-size: 2em;
+    height: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#cbView,
+#balanceView, #tabs {
+    display: none;
+}
+
+
+
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ccc;
+    font-weight: bold;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+}
+
+/* Style all font awesome icons */
+#social {
+    margin-top:1em;
+}
+.fab {
+    padding: 0.5em;
+    font-size: 1em;
+    width: min-content;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    display: inline;
+  }
+  
+  /* Add a hover effect if you want */
+  .fab:hover {
+    opacity: 0.7;
+  }
+  
+  /* Set a specific color for each brand */
+  
+  /* Facebook */
+  .fa-discord {
+    background: #5865F2;
+    color: white;
+  }
+  .fa-medium {
+    background: #000000;
+    color: white;
+  }
+  /* Twitter */
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>ISX zapper</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stellar-sdk/10.1.0/stellar-sdk.min.js"
+        integrity="sha512-EqNQsxKR6rZ5xKl29xXa+ez7xgtVSUpj9UDzZmTqoyF0wHbusLkrP8S7dOsKa9DmkoHbssoWUA4+n/0KYY1EAQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <div id="main">
+
+        <div id="title">
+            <div id="isxcontainer">
+
+                <img id="isx" src="https://isx.interstellar-nft.com/img/isx.png" />
+                <div id="beam">
+                    &nbsp;ISX&nbsp;zapper&nbsp;
+                </div>
+                <div id="zappercontainer">
+                    <img id="zapper" src="./zapper.png" />
+                    <span
+                        style="font-style:italic; font-size:small;margin-left: -0.8em;top: -0.6em;position: relative;">beta</span>
+                </div>
+            </div>
+        </div>
+        
+        <div id="account"></div>
+        <div id="balance"></div>
+        <div class="tab" id="tabs">
+            <button class="tablinks" id="gotoBalance">Balance</button>
+            <button class="tablinks" id="gotoCB">Airdrops</button>
+          </div>
+        <div id="balanceView" class="tabcontent">
+            <div id="slidercontainer">
+                <span style="margin-top: 2em;display: inline-block;">Choose the amount of ISX you want to zap</span>
+                <input type="range" id="slider" min="0" max="100" value="0" step="0.01">
+                <span id="slidervalue">0 %</span>
+            </div>
+
+            <div id="zapcontainer">
+                <input type="number" id="zapvalue" />
+                <button id="zapbutton" class="zap">
+                    ZAP
+                </button>
+            </div>
+        </div>
+
+        <div id="cbView" class="tabcontent">
+
+            <span style="margin-top: 2em;display: inline-block;">Choose the claimable balances you want to zap</span>
+            <div id="cbList">
+
+            </div>
+            <div id="cbAmountContainer">
+                
+            </div>
+            <button id="zapbuttoncb" class="zap" disabled>
+                ZAP <span id="cbAmount">0</span> ISX
+            </button>
+        </div>
+        <button id="connect" class="zap">Connect</button>
+        <div id="transaction"></div>
+        <div id="social">
+            <a href="https://twitter.com/InterstellarISX" class="fab fa-twitter" target="_blank"></a>
+            <a href="https://discord.gg/TCHp7qgXVc" class="fab fa-discord" target="_blank"></a>
+            <a href="https://interstellar-nft.medium.com/" class="fab fa-medium" target="_blank"></a>
+        </div>
+    </div>
+
+    <script type="module" src="main.js">
+
+    </script>
+</body>
+
+</html>
