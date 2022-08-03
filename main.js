@@ -138,6 +138,8 @@ function displayAccount(account) {
     // document.getElementById("selection").style.display = "block";
     document.getElementById("connect").style.display = "none";
     displayClaimableBalances(knownassets);
+
+    updateCounter();
 }
 
 async function displayClaimableBalances(knownassets) {
@@ -178,7 +180,7 @@ async function displayClaimableBalances(knownassets) {
     if (cl <= 0) {
         table += `<tr >`;
         table += `<td>No claimable balances to zap</td><td></td><td></td>`;
-        table += "</tr>"; 
+        table += "</tr>";
     }
     table += "</table>";
     document.getElementById("cbList").innerHTML = table;
@@ -223,7 +225,8 @@ async function checkCBAmount() {
             paths.push({
                 id: cb.id,
                 asset: new StellarSdk.Asset(cb.asset.split(":")[0], cb.asset.split(":")[1]),
-                paths: path});
+                paths: path
+            });
             sum += Number(path.destination_amount);
             checkboxes[i].disabled = false;
         } else {
@@ -328,7 +331,7 @@ async function zapCB() {
 
     let paths = await checkCBAmount();
 
-    if (paths.length > 0 && paths.length <= (100/4)) {
+    if (paths.length > 0 && paths.length <= (100 / 4)) {
 
         var memo = StellarSdk.Memo.text("Zap");
         var maxFee = 10000;
@@ -342,7 +345,7 @@ async function zapCB() {
         });
 
         let groups = [];
-        let count=0;
+        let count = 0;
         paths.forEach(path => {
 
             let assetPath = path.paths.path.map(a => {
@@ -357,7 +360,7 @@ async function zapCB() {
                 asset: path.asset
             })).addOperation(StellarSdk.Operation.claimClaimableBalance({
                 balanceId: path.id,
-            })).addOperation(StellarSdk.Operation. pathPaymentStrictSend({
+            })).addOperation(StellarSdk.Operation.pathPaymentStrictSend({
                 sendAmount: path.paths.source_amount,
                 sendAsset: path.asset,
                 destMin: destmin,
@@ -370,7 +373,7 @@ async function zapCB() {
             }));
             groups.push({
                 from: count,
-                to: count+3,
+                to: count + 3,
                 title: "Convert " + path.asset.code + " to ISX and zap it"
             })
             count += 4;
@@ -446,3 +449,19 @@ document.getElementById("gotoCB").addEventListener("click", () => {
     document.getElementById("cbView").style.display = "block";
 });
 
+async function updateCounter ()  {
+
+    let server = new StellarSdk.Server("https://horizon.stellar.org");
+    let response = await server.assets().forCode("ISX").forIssuer("GBPB3G2LWSCUSGJTAUHRKOGBSXFDGDOHRGY5QXISNMWQEY6PDLY3YCD6").call();
+    if (response.records.length == 1) {
+        let isx = response.records[0];
+        let initial = 500000000;
+        let current = Number(isx.amount) + Number(isx.claimable_balances_amount) + Number(isx.liquidity_pools_amount);
+        let zapped = initial - current;
+
+        document.getElementById("zapcontent").innerHTML = `<span id="zapped">${Intl.NumberFormat().format(zapped)}</span> ISX zapped `;
+    }
+}
+
+updateCounter();
+setInterval(updateCounter, 60000);

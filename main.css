@@ -17,6 +17,19 @@
 
 }
 
+#zapped {
+    text-align: center;
+
+    /* text-shadow: 0 0 5px green, 0 0 30px green;
+    text-decoration: line-through; */
+    display: inline-block;
+}
+#zapcontent {
+    text-align: right;
+    color: green;
+    font-size: 1em;
+    font-weight: lighter;
+}
 
 
 #title {
