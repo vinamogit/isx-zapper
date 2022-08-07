@@ -5,16 +5,31 @@
     margin-left: auto;
     margin-right: auto;
 
-    display: flex;
-    flex-direction: column;
+
+    display: inline-block;
+    /* flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: flex-start;
+    justify-content: flex-start; */
     align-items: stretch;
     align-content: stretch;
 
     box-shadow: 0 0 1px #eeeeee, 0 0 4px #aaa;
     padding: 1em;
 
+}
+
+@media only screen and (max-width: 600px) {
+    #main{
+        display: inline;
+        box-shadow: unset;
+    } 
+}
+
+
+@media screen and (max-with: 800px) {
+    #main {
+        display: inline;
+    }
 }
 
 #zapped {
