@@ -134,7 +134,7 @@ function displayAccount(account) {
     }
     document.getElementById("tabs").style.display = "block";
     // document.getElementById("balanceView").style.display = "block";
-    document.getElementById('gotoBalance').click();
+    document.getElementById('gotoCB').click();
     // document.getElementById("selection").style.display = "block";
     document.getElementById("connect").style.display = "none";
     displayClaimableBalances(knownassets);
